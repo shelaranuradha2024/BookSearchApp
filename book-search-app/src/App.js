@@ -1,11 +1,17 @@
 import React from 'react';
-import BookSearch from './BookSearch'; // Ensure this import is correct
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BookSearch from './components/BookSearch';
+import Bookshelf from './components/BookShelf';
+
 
 function App() {
   return (
-    <div className="App">
-      <BookSearch />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<BookSearch />} />
+        <Route path="/bookshelf" element={<Bookshelf />} />
+      </Routes>
+    </Router>
   );
 }
 
